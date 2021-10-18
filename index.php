@@ -9,13 +9,20 @@
     <?php 
     include 'function.php';
 
+    if(isset($_SESSION['connected'])){
+      $user = " ";
+  } else {
+      header("Location: ./login.php");
+  }
+
     ?>
     <body>
 
         <div class="container">
-            <h1 class="border bg-dark rounded-lg text-white"> &nbsp; Interventions effectuées  </h1>
+            <?php echo "Bonjour ". $user."."; ?> <br>
+            <a href="./logout.php"> Fermer la session </a>
 
-            <div class="row">
+            <div class="row border bg-dark rounded-lg text-white">
                 <div class="col">
                     <form name="search" method="post" action="">
                         <div>
@@ -37,8 +44,8 @@
 
 
 
-            <table class="table">
-            <thead>
+            <table class="table table-hover table-striped">
+            <thead class="thead-dark">
                 <tr>
                     <th scope="col"> # </th>
                     <th scope="col"> intervention </th>
