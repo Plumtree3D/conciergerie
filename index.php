@@ -10,19 +10,18 @@
     include 'function.php';
 
     if(isset($_SESSION['connected'])){
-      $user = " ";
   } else {
       header("Location: ./login.php");
   }
+
+
+
 
     ?>
     <body>
 
         <div class="container">
-            <?php echo "Bonjour ". $user."."; ?> <br>
-            <a href="./logout.php"> Fermer la session </a>
-
-            <div class="row border bg-dark rounded-lg text-white">
+            <div class="row pt-5">
                 <div class="col">
                     <form name="search" method="post" action="">
                         <div>
@@ -32,6 +31,7 @@
                     </form>
                 </div>
 
+
                 <div class="col-1">
                     <!-- Button trigger modal -->
                     <button type="button" class="btn btn-success" data-toggle="modal" data-target="#ajouter">
@@ -39,6 +39,11 @@
                     </button>
                 </div>
 
+            </div>
+
+            <div class="alert alert-info">
+              <?php echo " &nbsp; Bonjour ". ($_SESSION['user'])." !"; ?> 
+              <a class="btn-sm btn-secondary mx-3" href="./logout.php"> Fermer la session </a>
             </div>
             
 
@@ -93,9 +98,6 @@
             
         </div>
 
-
-
-
 <!-- Modal -->
 <div class="modal fade" id="ajouter" tabindex="-1" role="dialog" aria-labelledby="ajouter" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -143,6 +145,8 @@
     </div>
   </div>
 </div>
+
+
 
 
 
