@@ -3,7 +3,6 @@
 
 $fetch = "SELECT * FROM intervention where 1";
 
-// $pdo = new PDO("mysql:dbname=ilanr_;host=localhost","ilanr", "nV7X6KdGrCjhrw==");
 $pdo = new PDO("mysql:dbname=conciergerie; host=localhost","root", "");
 $temp = $pdo->prepare($fetch);
 $temp->execute();
